@@ -442,7 +442,7 @@ def train_model(keep_weights = False, read_last_lr = True, summary_only=False, v
             last_lr = get_last_lr(existing_log_lines)
             fmt_string = "\033[1;35mLoading %s into model, continuing from \033[1;32mepoch %d\033[0m"
             print(fmt_string % (os.path.basename(weight_file), last_epoch + 1))
-            if read_last_lr and last_lr:  # 读取正确，否则是None
+            if read_last_lr and last_lr:  # requires to resume from last lr and lr was correctly read from log file
                 optimizer = optim.SGD(model.parameters(), lr=last_lr, momentum=my_optim.momentum,
                                       nesterov=my_optim.nesterov)
                 scheduler = lr_scheduler.StepLR(optimizer, step_size=my_optim.step, gamma=my_optim.gamma)
