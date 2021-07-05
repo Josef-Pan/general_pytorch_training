@@ -389,7 +389,7 @@ def summary(model, verbose = 0):
         print(model)
 #########################################################################################################
 def policy186():
-    data_dir = 'human.new'; epochs = 100
+    data_dir = 'flowers.new'; epochs = 100
     optimizer = MyOptimizer(lr=4e-5, step=2, gamma=0.95, momentum=0.9, nesterov=1)
     batch_sizes ={'train':32, 'val':16}; unfreeze_from = 'denseblock3'
     return data_dir, epochs, optimizer, batch_sizes, unfreeze_from
@@ -570,7 +570,7 @@ def main(argv):
     :return:
     """
     string_argvs = [str(arg) for arg in argv]
-    if ('--init' in string_argvs): split_into_train_val('human', 'human.new'); exit(0)
+    if ('--init' in string_argvs): split_into_train_val('flowers', 'flowers.new'); exit(0)
     if ('--ev'   in string_argvs): evaluate_model(); exit(0)
     if ('--sum'  in string_argvs): train_model(summary_only=True, verbose=0); exit(0)
     if ('--sum0' in string_argvs): train_model(summary_only=True, verbose=0); exit(0)
