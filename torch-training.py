@@ -566,7 +566,8 @@ def evaluate_model(): # Not realized yet
 # ✅ 4 Program entry point, should run with --init for first time
 def main(argv):
     """
-    :param argv: must run --init first to create folder containing slpitted pictures if your dataset is not splitted
+    ❗❗❗ must run with --init option first to create folder containing slpitted pictures if your dataset is not splitted
+    :param argv: 
     :return:
     """
     string_argvs = [str(arg) for arg in argv]
