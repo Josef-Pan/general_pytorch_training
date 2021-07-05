@@ -580,7 +580,7 @@ def main(argv):
     if ('--sum3' in string_argvs): train_model(summary_only=True, verbose=3); exit(0)
     if ('--resume' in string_argvs or '-r' in string_argvs):
         train_model(keep_weights=True, read_last_lr = True)  # Continue training, resume last lr
-    elif ('--cont' in string_argvs or '-c' in string_argvs):
+    elif ('--continue' in string_argvs or '-c' in string_argvs):
         train_model(keep_weights=True, read_last_lr = False) # Continue training, new lr
     else:
         train_model(keep_weights=False)# Restart training
