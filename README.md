@@ -2,6 +2,7 @@
 # general_pytorch_training
 General pytorch transfer learning with progress bar and per class validation
 Features:
+
 1 Show progress bar for both training and validation progress
 
 2 Show per class validation results and total validation results
