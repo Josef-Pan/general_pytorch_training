@@ -545,7 +545,7 @@ def train_model(keep_weights = False, read_last_lr = True, summary_only=False, v
         val_log = val_string.lstrip('val').lstrip(' ') + ' '
         log_to_file(dt_string + epoch_string + val_log + acc_2_str(accuracy_all) + lr_string)
 
-        # Wieghts #############################################################
+        # Weights #############################################################
         latest_weight = "torch-weights-%03d-%05.2f.pth" % (epoch, epoch_acc*100.0)
         torch.save(model.state_dict(), latest_weight)
         #shutil.copyfile(latest_weight, 'weights.pth')  # Make a copy of latest weights to resume from
